@@ -5,11 +5,9 @@ jobs :
     runs-on : ubuntu-latest
     steps:
     - uses : actions/checkout@v2
-
-
-  jobs2 :
-    needs : job1
-    runs-on : ubuntu-latest
-    steps: 
-    - name: Step 2
-      run: echo "Execution job2"
+    - name: Set up Python
+      uses: actions/setup-python@v2
+      with:
+        python-version: "3.8"
+    - name: Say Hello
+      run: echo "Hello"
