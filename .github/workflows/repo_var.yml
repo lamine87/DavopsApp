@@ -1,0 +1,14 @@
+name: Repository secret
+
+on: 
+   workflow_dispatch:
+
+jobs:
+  job1:
+    runs-on: ubuntu-latest
+    steps:
+      - name: Afficher secrets et variables
+        run: |
+              echo "La variable est: ${{ vars.M_VAR }}"
+              echo "Secret est: ${{ secrets.DEMO_SECRET }}"
+         
