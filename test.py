@@ -20,7 +20,7 @@ accuracy = accuracy_score(y_test, y_pred)
 print(f"Précision du modèle : {accuracy:.2f}")
 
 # Définir un seuil de classification
-seuil_classification = float(os.environ.get('MyVAR'))
+seuil_classification = float(os.environ.get('MYVAR'))
 
 # Vérifier si le seuil est atteint
 if accuracy >= seuil_classification:
