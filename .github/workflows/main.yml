@@ -2,7 +2,7 @@ name: ML Model CI 2
 
 on: [push]
 env:
-  MYVAR: vars.MYVAR   
+  MYVAR: ${{vars.MYVAR}}   
 
 jobs:
   build:
