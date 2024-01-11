@@ -45,5 +45,9 @@ jobs:
         python -m pip install --upgrade pip
         pip install -r requirements.txt  # You might want to have a requirements.txt file with necessary packages
 
+        
     - name: Test Model
-      run: python test.py
+      env:
+        MYVAR: vars.MYVAR
+      run: |
+        python test.py
