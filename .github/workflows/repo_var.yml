@@ -6,6 +6,8 @@ on:
 jobs:
   job1:
     runs-on: ubuntu-latest
+    # environments: test
+
     steps:
       - name: Afficher secrets et variables
         run: |
