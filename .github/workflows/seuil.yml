@@ -1,0 +1,19 @@
+name: Mon Seuil workflow
+
+on:
+  push:
+    branches:
+      - main
+
+jobs:
+  test:
+    runs-on: ubuntu-latest
+
+    steps:
+      - name: Checkout repository
+        uses: actions/checkout@v2
+
+      - name: Vérifier le seuil_classification
+        run: |
+          if: [ $seuil_classification -eq 0 ] || [ $seuil_classification -eq 1 ]; 
+            echo "La condition est satisfaite. Exécuter les étapes suivantes..."
