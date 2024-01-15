@@ -21,3 +21,7 @@ jobs:
     runs-on: ubuntu-latest
 
     if: github.ref == 'refs/heads/main'
+    steps:
+        - name: Print test
+          run: |
+            echo "Job Test"
