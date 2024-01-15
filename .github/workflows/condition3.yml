@@ -1,0 +1,30 @@
+name: SEUIL Condition 3
+
+on: 
+  workflow_dispatch:
+
+jobs:
+  build:
+    runs-on: ubuntu-latest
+    steps:
+    - uses: actions/checkout@v2
+  
+  test:
+    runs-on: ubuntu-latest
+    needs: build
+    steps:
+    - name: Print test
+      run: |
+        echo "Job Test"
+
+  deploy:
+    runs-on: ubuntu-latest
+
+    if: (vars.SEUIL >= 0) && (vars.SEUIL <= 1)
+
+    steps:
+        - uses: actions/checkout@v2
+        - name: Executer un script si la condition remplie
+          run: |
+            echo "La valeur de seuil est dans l'intervalle [0,1]"
+
